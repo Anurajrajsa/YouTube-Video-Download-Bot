@@ -17,7 +17,7 @@ app = Client("my_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 @app.on_message(filters.command("start"))
 def start(client, message):
     user = message.from_user
-    message.reply_text(f"Hello, @{user.username}!\n\nSend me the YouTube link of the video you want to upload.")
+    message.reply_text(f"Hello, @{user.username}!\n\nSend me the YouTube link of the video you want to upload @rajsarajmovie.")
 
 # Help command handler
 @app.on_message(filters.command("help"))
@@ -25,7 +25,7 @@ def help(client, message):
     help_text = """
     Welcome to the YouTube Video Uploader Bot!
 
-To upload a YouTube video, simply send me the YouTube link.
+To upload a YouTube video, simply send me the YouTube link rajsa.
     
 Enjoy using the bot!
 
@@ -47,7 +47,7 @@ async def process_youtube_link(client, message):
         video.download(filename='downloaded_video.mp4')
 
         # Uploading text message
-        uploading_msg = await message.reply_text("Uploading video...")
+        uploading_msg = await message.reply_text("Uploading video by rajsa ...")
 
         # Send the video file to the user
         sent_message = await app.send_video(message.chat.id, video=open('downloaded_video.mp4', 'rb'), caption=yt.title)
